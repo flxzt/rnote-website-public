@@ -11,7 +11,7 @@
     <style>
     :root {
         /* Primary theme color */
-        --primary-color: #6b7c88;
+        --primary-color: #608099;
         /* Primary theme text color */
         --primary-text-color: #e7e7e7;
         /* Primary theme link color */
@@ -19,8 +19,8 @@
         /* Secondary color: the background body color */
         --secondary-color: #202020;
         --secondary-text-color: #181818;
-        /* Highlight text color of table of content */
-        --toc-highlight-text-color: rgb(167, 4, 4);
+        /* Highlight text color */
+        --highlight-text-color: rgb(167, 4, 4);
     }
 </style>
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
@@ -92,7 +92,7 @@
                 alt="Join Matrix #rnote" width="82" height="28" /></a>
     </div>
 </section>
-<img class="hero-image" src="images/rnote.svg">
+<img class="hero-image" src=https://rnote.flxzt.net/images/rnote.svg>
 
 <div class="explore-more text" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
     Explore More ⬇
@@ -103,8 +103,7 @@
     }
 
     .hero-image {
-        min-width: 300px;
-        width: 50%;
+        min-width: 33%;
     }
 
     @media screen and (max-width: 768px) {
@@ -148,6 +147,11 @@
                 
                 <div class="toc-item">
                     <a class="subtext" href="https://rnote.flxzt.net/#downgrading">Downgrading</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://rnote.flxzt.net/#community">Community</a>
                 </div>
                 
                 
@@ -207,6 +211,9 @@ The file format is still unstable. It might change and break compatibility betwe
 </span><span>$ flatpak mask</span><span style="font-style:italic;color:#fd971f;"> --remove</span><span> com.github.flxzt.rnote
 </span></code></pre>
 <p>Then the documents can be exported as an SVG or PDF and can be re-imported into the newest version of Rnote.</p>
+<h1 id="community">Community</h1>
+<p>If you have any questions or want to start a general discussion, open a topic in the <a href="https://github.com/flxzt/rnote/discussions">Github Discussions</a> section.
+There is also the <a href="https://matrix.to/#/#rnote:matrix.org">#rnote:matrix.org</a> chat room for more volatile conversation.</p>
 <h1 id="more-information">More Information</h1>
 <p>More detailed information regarding contributions, building, etc. is available at the
 <a href="https://github.com/flxzt/rnote">Github Repository</a></p>
