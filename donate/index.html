@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Donate |  </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<link rel="icon" type="image/png" href="/favicon.png">
+
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #608099;
+        /* Primary theme text color */
+        --primary-text-color: #e7e7e7;
+        /* Primary theme link color */
+        --primary-link-color: #2dd0f9;
+        /* Secondary color: the background body color */
+        --secondary-color: #202020;
+        --secondary-text-color: #181818;
+        /* Highlight text color */
+        --highlight-text-color: rgb(167, 4, 4);
+    }
+</style>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://rnote.flxzt.net/juice.css">
+
+    
+    
+        
+        
+
+        <script data-goatcounter="https://rnote.goatcounter.com/count" async src="https://rnote.flxzt.net/js/count.js"></script>
+        <noscript>
+            
+            <img src="https://rnote.goatcounter.com//count?p=&#x2F;donate&#x2F;&t=Donate">
+        </noscript>
+     
+
+    
+    
+</head>
+
+<body>
+    
+<header>
+    
+
+<a href="https:&#x2F;&#x2F;rnote.flxzt.net&#x2F;">
+    <div class="logo">
+        <img src="https://rnote.flxzt.net/images/rnote.svg" alt="logo">
+        Rnote
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;rnote.flxzt.net&#x2F;donate&#x2F;">Donate</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;hosted.weblate.org&#x2F;engage&#x2F;rnote&#x2F;">Help Translate</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;flxzt&#x2F;rnote">Repository</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+        
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<p>Rnote is mainly developed by me, <a href="https://blog.flxzt.net/about/">Felix Zwettler</a>, in my free time.<br />
+Donating would mean I could devote more time to the project and I could get some extra coffee while developing it ☕.️ Also, given enough sponsors,
+I would be able to purchase a linux phone or a mobile drawing tablet such as the PineNote to make an effort for porting and optimizing Rnote for those devices.</p>
+<p>There are multiple ways for giving a donation:</p>
+<ul>
+<li><a href="https://github.com/sponsors/flxzt/">Github Sponsors</a></li>
+<li><a href="https://liberapay.com/flxzt">LiberaPay</a></li>
+<li><a href="https://www.paypal.com/donate?hosted_button_id=LQ9Q4868GKQGG">PayPal</a></li>
+</ul>
+
+
+        </div>
+
+        
+        
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        Felix Zwettler
+        - <a href="https://github.com/flxzt">github.com/flxzt</a>
+        - <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img
+                alt="Creative Commons Lizenzvertrag" style="border-width:0"
+                src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+        - © 2022
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>
