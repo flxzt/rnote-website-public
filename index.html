@@ -254,38 +254,28 @@ There is also the <a href="https://matrix.to/#/#rnote:matrix.org">#rnote:matrix.
 
 </body>
 <script>
-    function highlightNav(heading) {
-        let pathname = location.pathname;
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
         document.querySelectorAll(".toc a").forEach((item) => {
             item.classList.remove("active");
         });
-        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
-    }
 
-    let currentHeading = "";
-    window.onscroll = function () {
-        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
-        let elementArr = [];
-
-        h.forEach(item => {
-            if (item.id !== "") {
-                elementArr[item.id] = item.getBoundingClientRect().top;
-            }
-        });
-        elementArr.sort();
-        for (let key in elementArr) {
-            if (!elementArr.hasOwnProperty(key)) {
-                continue;
-            }
-            if (elementArr[key] > 0 && elementArr[key] < 300) {
-                if (currentHeading !== key) {
-                    highlightNav(key);
-                    currentHeading = key;
-                }
-                break;
-            }
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
         }
-    }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
 </script>
 
 </html>
