@@ -10,21 +10,35 @@
 
     <style>
     :root {
-        /* Primary theme color */
         --primary-color: #667E96;
-        /* Primary theme text color */
-        --primary-text-color: #e7e7e7;
-        /* Primary theme link color */
+        --primary-text-color: #f3f3f3;
+        --primary-text-color-over: #FFF;
         --primary-link-color: #2dd0f9;
-        /* Secondary color: the background body color */
-        --secondary-color: #202020;
-        --secondary-text-color: #181818;
-        /* Highlight text color */
-        --highlight-text-color: rgb(167, 4, 4);
+        --secondary-color: #282828;
+        --secondary-text-color: #303030;
+        --toc-highlight-text-color: #b3280f;
+        --toc-background-color: #eeeeee;
+        --code-color: white;
+        --code-background-color: #383838;
+
+        --shadow-color: #202020;
+        --header-font-family: "Fira Sans", sans-serif;
+        --text-font-family: "Fira Sans", sans-serif;
+
+        /* custom */
+        --pattern-color: #8998aa;
+    }
+
+    .hero {
+        background-size: 32px 32px;
+        background-image:
+            radial-gradient(circle, var(--pattern-color) 1px, transparent 1px);
     }
 </style>
+    
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="https://rnote.flxzt.net/juice.css">
 
@@ -60,6 +74,7 @@
 <nav>
     
     
+    
     <a class="nav-item subtitle-text" href="https://rnote.flxzt.net/donate/">Donate</a>
     
     
@@ -82,9 +97,9 @@
         Sketch and take handwritten notes.
     </h1>
     <h3 class="title-text">
-        <b>Rnote</b> is an open-source vector-based drawing app for sketching, handwritten notes and to annotate
-        documents and pictures. Targeted at students, teachers and those who own a drawing tablet, it provides features
-        like PDF and picture import and export, an infinite canvas and an adaptive UI for big and small screens.
+        <b>Rnote</b> is an open-source vector-based drawing app for sketching, handwritten notes and to annotate documents and pictures.
+        It is targeted at students, teachers and those who own a drawing tablet and provides features like Pdf and picture import and export,
+        an infinite canvas and an adaptive UI for big and small screens.
     </h3>
     <div>
         <a class="github-button" href="https://github.com/flxzt/rnote" data-size="large" data-show-count="true"
